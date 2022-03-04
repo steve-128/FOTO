@@ -2,7 +2,6 @@
     <a href='sign.php'>CLICK HERE</a> |
     <a href='log.php'>Log In</a> |
     <a href='help.php'>HELP</a>
-    <a href='help.php'>yaya</a>
 </nav>
 
 <?php
