@@ -23,7 +23,10 @@ try {
 };
 
 
-$sql = "SELECT * FROM `post` INNER JOIN `user` ON post.user = user.User_ID WHERE user.Username = " . $other;
+$sql = "SELECT * FROM `post` 
+        INNER JOIN `user` ON post.user = user.Username
+        left join `post_like` on post.postID = post_like.Like_post 
+        WHERE user.Username = '" . $other."'";
 $result = $conn->query($sql);
 
 $sql1 = "SELECT * FROM `followers` where `User` like'" . $_SESSION['username'] . "'";
@@ -56,4 +59,19 @@ while ($row = $result->fetch()) {
     echo "<br>";
     echo $row['Description'];
     echo "<br>";
+    echo "<form action='./like.php' method = 'POST'>
+                <input type='hidden' name='postid' value='".$row['PostID']."'>
+                <input type='hidden' name='like'";
+    if(!($row['PostID']==$row['Like_post']))
+    {
+        echo "value='1'>
+                <input type='submit' value='💗'>
+              </form>";
+    }
+    else
+    {
+        echo "value='0'>
+            <input type='submit' value='💔'>
+          </form>";
+    }
 }

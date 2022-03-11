@@ -20,11 +20,11 @@
 
     if($view==0)
     {
-        $sql = "SELECT * FROM `followers` inner join `user` on user.username = followers.user WHERE `Following` like ".$_SESSION['username'];
+        $sql = "SELECT * FROM `followers` inner join `user` on user.username = followers.user WHERE `Following` like '".$_SESSION['username']."'";
         echo "Followers: <br>";
     }
     else {
-        $sql = "SELECT * FROM `followers` inner join `user`on user.username = followers.following WHERE `User` like ".$_SESSION['username'];
+        $sql = "SELECT * FROM `followers` inner join `user`on user.username = followers.following WHERE `User` like '".$_SESSION['username']."'";
         echo "Following: <br>";
     }
     $result = $conn->query($sql);

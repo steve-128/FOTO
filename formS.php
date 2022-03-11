@@ -45,15 +45,18 @@ try {
 
 session_start();
 
-$sql = "select * from `user` where `Username` = ".$user;
-$result = $conn->query($sql);
-$row = $result->fetch();
 
 $_SESSION['fname'] = $_POST['fname'];
 $_SESSION['lname'] = $_POST['lname'];
 $_SESSION['username'] = $_POST['user'];
 $_SESSION['email'] = $_POST['email'];
 $_SESSION['password'] = $_POST['pass'];
+
+
+$sql = "select * from `user` where `Username` like '".$user."'";
+$result = $conn->query($sql);
+$row = $result->fetch();
+
 $_SESSION['user_id'] = $row['User_ID'];
 
 header("Location: ./main.php");
