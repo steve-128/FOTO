@@ -2,8 +2,6 @@
 $servername = "localhost";
 $username = "root";
 $password = "lhmethod";
-
-$search = $_POST['search'];
   //connect to database
 try {
   $conn = new PDO("mysql:host=$servername;dbname=user", $username, $password);

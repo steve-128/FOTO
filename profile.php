@@ -2,26 +2,25 @@
     require('nav.php');
 ?>
 <?php
+    session_start();
 
-session_start();
-
-echo "user info";
-echo "<br>";
-if(isset($_SESSION['profilepic']))
-{
-    echo "Profile: <img src='".$_SESSION['profilepic']."'>";
+    echo "user info";
     echo "<br>";
-}
-echo "username: ".$_SESSION['username'];
-echo "<br>";
-echo "email: ".$_SESSION['email'];
-echo "<br>";
-echo "<a href='viewfollows.php?view=0'>Followers</a>";
-echo "<br>";
-echo "<a href='viewfollows.php?view=1'>Following</a>";
-echo "<br>";
+    if(isset($_SESSION['profilepic']))
+    {
+        echo "Profile: <img src='".$_SESSION['profilepic']."'>";
+        echo "<br>";
+    }
+    echo "username: ".$_SESSION['username'];
+    echo "<br>";
+    echo "email: ".$_SESSION['email'];
+    echo "<br>";
+    echo "<a href='viewfollows.php?view=0'>Followers</a>";
+    echo "<br>";
+    echo "<a href='viewfollows.php?view=1'>Following</a>";
+    echo "<br>";
 
-
-echo "<form action='out.php' method='POST'>        
-    <input type='submit' id='submit' name='submit' value='log out'> 
-</form>";
+    echo "<form action='out.php' method='POST'>        
+        <input type='submit' id='submit' name='submit' value='log out'> 
+    </form>";
+?>

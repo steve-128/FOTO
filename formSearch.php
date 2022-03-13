@@ -2,7 +2,9 @@
     require('db.php');
 ?>
 <?php
-session_start();
+    session_start();
+
+    $search = $_POST['search'];
 
     $sql = "SELECT * FROM `user` WHERE `Username` like '%".$search."%'";
     $result = $conn->query($sql);
@@ -14,3 +16,4 @@ session_start();
         echo "<br>";
         echo "<br>";
     }
+?>
