@@ -22,7 +22,6 @@ try {
     {
         echo "<img src='".$row['Profile']."'";
         echo "<br>";
-        echo "<br>";
         echo "<a href='otherspage.php?name=".$row['Username']."'>".$row['Username']."</a>";
         echo "<br>";
     }
