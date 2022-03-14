@@ -12,7 +12,6 @@
             left join `post_like` on post.postID = post_like.Like_post 
             WHERE followers.user like '".$_SESSION['username']."' 
             ORDER BY post.PostTime DESC";
-
     $result = $conn->query($sql);
 
     while($row = $result -> fetch())
@@ -38,5 +37,12 @@
                 <input type='submit' value='💔'>
               </form>";
         }
+        $commentsql = "SELECT count(Comment) FROM `post_comment` WHERE `Post` = '".$row['PostID']."'";
+        $commentnum = $conn->query($commentsql);
+        $num = $commentnum -> fetch();
+
+        echo "<a href='comment.php?postid=" . $row['PostID'] . "'>".$num['count(Comment)']."Comments</a>";
+        echo "<br>";
+
     }
 ?>
