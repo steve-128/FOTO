@@ -6,9 +6,9 @@
     session_start();
 
     $sql = "SELECT * FROM `post` 
-            INNER JOIN `user` ON post.user = user.Username 
-            left join `post_like` on post.postID = post_like.Like_post 
-            WHERE user.Username = ".$_SESSION['username'];
+            INNER JOIN `user` ON post.User = user.Username 
+            left join `post_like` on post.PostID = post_like.Like_post 
+            WHERE post_like.User like '".$_SESSION['username']."'";
     $result = $conn->query($sql);
     while($row = $result->fetch())
     {

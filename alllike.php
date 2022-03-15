@@ -8,12 +8,12 @@
 
   $sql = "SELECT * FROM `post_like` 
           inner join `post` ON post_like.Like_post = post.PostID 
-          where post_like.User like '".$_SESSION['username']."'";
+          where post_like.Like_User like '".$_SESSION['username']."'";
   $result = $conn->query($sql);
 
   while($row = $result->fetch())
   {
-      echo "User: ".$row['User'];
+      echo "User: ".$row['Like_User'];
       echo "<br>";
       echo "<img src='".$row['Foto']."'>";
       echo "<br>";

@@ -10,8 +10,7 @@
     $sqlPost = "SELECT * FROM `followers` 
             inner join `post` on post.User = followers.following 
             left join `post_like` on post.postID = post_like.Like_post 
-            WHERE post.PostID like '".$pid."'";
-
+            WHERE PostID like '".$pid."'";
 //////////////////////////////can left join comment again
     $post = $conn->query($sqlPost);
     $postRow = $post -> fetch();
@@ -40,24 +39,49 @@
     
     $commentSql = "SELECT * FROM `post_comment` 
                    inner join `post` on post_comment.Post = post.PostID
-                   where post.PostID = '". $pid ."'
+                   left join `user` on user.Username = post_comment.Comment_User
+                   where PostID = ". $pid ."
                    ORDER BY post_comment.Time DESC";
     $comments = $conn->query($commentSql);
 
-    echo "<hr>";
+    
     echo "Comments:";
+    echo "<hr>";
     
     while($row = $comments ->fetch())
     {
         echo "User: ". $row['Comment_User'];
+        echo "<img src='".$row['Profile']."'>";
         echo "<br>";
         echo "Comment: ".$row['Comment'];
         echo "<br>";
         echo "Time: ".$row['Time'];
         echo "<br>";
+        if($_SESSION['username']==$row['Comment_User'])
+        {
+            echo "<form action='./commentform.php' method = 'POST'>
+                    <input type='hidden' name='comment_user' value='".$row['Comment_User']."'>
+                    <input type='hidden' name='comment' value='".$row['Comment']."'>
+                    <input type='hidden' name='postid' value='".$pid."'>
+                    <input type='hidden' name='time' value='".$row['Time']."'>
+                    <input type='submit' id='submit' name='submit' value='Edit'>
+                  </form>";
+            echo "<form action='./commentform.php' method = 'POST'>
+                    <input type='hidden' name='comment_user' value='".$row['Comment_User']."'>
+                    <input type='hidden' name='comment' value='".$row['Comment']."'>
+                    <input type='hidden' name='postid' value='".$pid."'>
+                    <input type='hidden' name='time' value='".$row['Time']."'>
+                    <input type='submit' id='submit' name='submit' value='Delete'>
+                  </form>";
+                ////////////////////only u can add or delete
+        }
         echo "<hr>";
     }
 
-
+    echo "<form action='./commentform.php' method = 'POST'>
+            <input type='hidden' name='postid' value='".$pid."'>
+            <input type='text' id='comment' name='comment'>
+            <input type='submit' id='submit' name='submit' value='Comment'>
+          </form>";
     
 ?>
