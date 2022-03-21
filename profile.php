@@ -1,11 +1,19 @@
 <?php
     require('nav.php');
+    require('db.php');
 ?>
 <?php
     session_start();
 
     echo "user info";
     echo "<br>";
+
+    $sql = "SELECT * FROM `user` where `username` like '".$_SESSION['username']."'";
+    $result = $conn->query($sql);
+
+    $row = $result -> fetchAll();
+    $_SESSION['profilepic'] = $row[0]['Profile'];
+
     if(isset($_SESSION['profilepic']))
     {
         echo "Profile: <img src='".$_SESSION['profilepic']."'>";

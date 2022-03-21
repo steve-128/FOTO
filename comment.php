@@ -11,7 +11,6 @@
             inner join `post` on post.User = followers.following 
             left join `post_like` on post.postID = post_like.Like_post 
             WHERE PostID like '".$pid."'";
-//////////////////////////////can left join comment again
     $post = $conn->query($sqlPost);
     $postRow = $post -> fetch();
 
@@ -73,7 +72,6 @@
                     <input type='hidden' name='time' value='".$row['Time']."'>
                     <input type='submit' id='submit' name='submit' value='Delete'>
                   </form>";
-                ////////////////////only u can add or delete
         }
         echo "<hr>";
     }
@@ -83,5 +81,4 @@
             <input type='text' id='comment' name='comment'>
             <input type='submit' id='submit' name='submit' value='Comment'>
           </form>";
-    
 ?>

@@ -6,6 +6,8 @@
 
     $pid = $_POST['postid'];
     $new = $_POST['new'];
+    $new = addslashes($new);
+
 
     $sql = "UPDATE `post_comment` 
             SET `Post`='".$pid."',`Comment`='".$new."',

@@ -16,6 +16,7 @@
     $likesql = "SELECT * FROM `post_like` where Like_User like '".$_SESSION['username']."'";
     $like = $conn->query($likesql);
     $likerow = $like -> fetchAll();
+    
     while($row = $result -> fetch())
     {
         echo "User: ".$row['Following'];

@@ -6,10 +6,12 @@
 
     $pid = $_POST['postid'];
 
-    if(!$_POST['submit']=='Edit')
+    if($_POST['submit']!='Edit')
     {
         if($_POST['submit']=='Comment')
         {
+            $_POST['comment'] = addslashes($_POST['comment']);
+
             $sql = "INSERT INTO `post_comment`(`Post`, `Comment`, `Comment_User`) 
                     VALUES ('".$_POST['postid']."','".$_POST['comment']."','".$_SESSION['username']."')";
             $result = $conn->query($sql);
@@ -26,7 +28,6 @@
         header("Location: ./comment.php?postid=".$pid);
         exit();
     }
-
     else{
         echo "<form action='./commentedit.php' method = 'POST'>
                     <input type='hidden' name='comment_user' value='".$_POST['comment_user']."'>
