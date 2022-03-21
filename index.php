@@ -1,3 +1,4 @@
+<!-- starting page -->
 <nav>
     <a href='sign.php'>CLICK HERE</a> |
     <a href='log.php'>Log In</a> |

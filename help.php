@@ -1,4 +1,4 @@
-<!-- or jump to sign up -->
+<!-- useless help file -->
 <nav>
     <a href="./index.php">Click to return</a>
 </nav>

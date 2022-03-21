@@ -1,3 +1,4 @@
+<!-- view profile -->
 <?php
     require('nav.php');
     require('db.php');

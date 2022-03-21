@@ -1,3 +1,4 @@
+<!-- sign up form handler -->
 <?php
 
 $servername = "localhost";

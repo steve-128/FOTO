@@ -1,3 +1,4 @@
+<!-- like form handler -->
 <?php
     require('db.php');
 ?>

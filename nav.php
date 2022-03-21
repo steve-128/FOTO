@@ -1,3 +1,4 @@
+<!-- navagation bar -->
 <nav>
     <a href="./main.php">Feed</a> |
     <a href="./profile.php">Profile</a> |

@@ -1,3 +1,4 @@
+<!-- print post function -->
 <?php
     echo "Post: ";
     echo $row['PostID'];

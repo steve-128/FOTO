@@ -1,3 +1,4 @@
+<!-- search form -->
 <?php
     require('nav.php');
 ?>

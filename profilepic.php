@@ -1,3 +1,4 @@
+<!-- upload profile pic form handler -->
 <?php
     require('db.php');
 ?>

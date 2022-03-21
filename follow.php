@@ -1,3 +1,4 @@
+<!-- follow or unfollow people form handler -->
 <?php
     require('db.php');
 ?>

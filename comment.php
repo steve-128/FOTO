@@ -1,3 +1,4 @@
+<!-- comment form and display comments -->
 <?php
     require('nav.php');
     require('db.php');

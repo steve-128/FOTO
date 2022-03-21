@@ -1,3 +1,4 @@
+<!-- log in form handler -->
 <?php
 
 $servername = "localhost";

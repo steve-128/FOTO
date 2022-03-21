@@ -1,3 +1,4 @@
+<!-- the main page/feed that shows the latest posts from all followers -->
 <?php
     require('nav.php');
     require('db.php');

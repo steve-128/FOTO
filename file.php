@@ -1,3 +1,4 @@
+<!-- upload post form handler -->
 <?php
     require('db.php');
 ?>
@@ -5,7 +6,7 @@
     session_start();
     
     echo "Your post:<br>";
-    require('movefolder.php');
+    require('movefile.php');
     echo $_POST['description'];
 
     $sql="INSERT INTO post (Foto, Description, User) Values ('".$img."','".$_POST['description']."','".$_SESSION['username']."')";

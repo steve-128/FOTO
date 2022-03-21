@@ -1,3 +1,4 @@
+<!-- upload profile pic form  -->
 <?php
     require('nav.php');
 ?>

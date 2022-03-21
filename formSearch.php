@@ -1,3 +1,4 @@
+<!-- form handler for search -->
 <?php
     require('db.php');
 ?>

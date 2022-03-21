@@ -1,3 +1,4 @@
+<!-- display all liked post -->
 <?php
   require('nav.php');
   require('db.php');

@@ -1,3 +1,4 @@
+<!-- view followers or following form handler -->
 <?php
     require('db.php');
 ?>

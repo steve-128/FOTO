@@ -1,3 +1,4 @@
+<!-- move the uploaded file to the folder -->
 <?php
     $folder = '\xampp\htdocs\php-lessons\project1\img\\';
     $path = $folder.$_FILES['upload']['name'];

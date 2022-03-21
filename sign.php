@@ -1,3 +1,4 @@
+<!-- sign up form -->
 <nav>
     <a href="./index.php">LOG IN/SIGN UP</a>
 </nav>

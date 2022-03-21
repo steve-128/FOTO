@@ -1,3 +1,4 @@
+<!-- upload post form -->
 <?php
     require('nav.php');
 ?>

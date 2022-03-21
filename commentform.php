@@ -1,3 +1,4 @@
+<!-- delete or add comment form handler + edit comment form-->
 <?php
     require('db.php');
 ?>

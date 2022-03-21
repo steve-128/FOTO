@@ -1,3 +1,4 @@
+<!-- display other users page -->
 <?php
     require('nav.php');
     require('db.php');

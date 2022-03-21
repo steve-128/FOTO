@@ -1,3 +1,4 @@
+<!-- edit comment form handler -->
 <?php
     require('db.php');
 ?>

@@ -1,3 +1,4 @@
+<!-- show the liked bottom -->
 <?php
     $LK = true;
 
