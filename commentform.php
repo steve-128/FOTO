@@ -4,6 +4,7 @@
 <?php
     session_start();
 
+    //post id = pid
     $pid = $_POST['postid'];
 
     if($_POST['submit']!='Edit')

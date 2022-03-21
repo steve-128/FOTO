@@ -5,36 +5,22 @@
 <?php
     session_start();
 
+    //post id = pid
     $pid = $_GET['postid'];
 
     $sqlPost = "SELECT * FROM `followers` 
             inner join `post` on post.User = followers.following 
-            left join `post_like` on post.postID = post_like.Like_post 
             WHERE PostID like '".$pid."'";
     $post = $conn->query($sqlPost);
-    $postRow = $post -> fetch();
+    $row = $post -> fetch();
 
-    echo "User: ".$postRow['Following'];
-    echo "<br>";
-    echo "<img src='".$postRow['Foto']."'>";
-    echo "<br>";
-    echo $postRow['Description'];
-    echo "<br>";
-    echo "<form action='./like.php' method = 'POST'>
-                <input type='hidden' name='postid' value='".$postRow['PostID']."'>
-                <input type='hidden' name='like'";
-    if(!($postRow['PostID']==$postRow['Like_post']))
-    {
-        echo "value='1'>
-                <input type='submit' value='💗'>
-              </form>";
-    }
-    else
-    {
-        echo "value='0'>
-            <input type='submit' value='💔'>
-          </form>";
-    }
+    require('printpost.php');        
+
+    $likesql = "SELECT * FROM `post_like` where Like_User like '".$_SESSION['username']."'";
+    $like = $conn->query($likesql);
+    $likerow = $like -> fetchAll();
+
+    require('likebottom.php');
     
     $commentSql = "SELECT * FROM `post_comment` 
                    inner join `post` on post_comment.Post = post.PostID

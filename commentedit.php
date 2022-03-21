@@ -4,7 +4,9 @@
 <?php
     session_start();
 
+    //post id = pid
     $pid = $_POST['postid'];
+    //new comment = new
     $new = $_POST['new'];
     $new = addslashes($new);
 

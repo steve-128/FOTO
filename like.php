@@ -4,7 +4,9 @@
 <?php
   session_start();
 
+  //like which post
   $like = $_POST['like'];
+  //post id = pid
   $pid = $_POST['postid'];
 
   if($like)
