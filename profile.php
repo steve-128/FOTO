@@ -21,6 +21,7 @@
         echo "<br>";
     }
     echo "<a href='./uploadprofile.php'>Upload profile pic</a>";
+    echo "<br>";
     echo "username: ".$_SESSION['username'];
     echo "<br>";
     echo "email: ".$_SESSION['email'];
