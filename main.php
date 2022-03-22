@@ -23,6 +23,9 @@
         require('printpost.php');        
         require('likebottom.php');
 
+        echo "<a href='likeby.php?postid=" . $row['PostID'] . "'>Liked Users</a>";
+        echo "<br>";
+
         $commentsql = "SELECT count(Comment) FROM `post_comment` WHERE `Post` = '".$row['PostID']."'";
         $commentnum = $conn->query($commentsql);
         $num = $commentnum -> fetch();
