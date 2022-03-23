@@ -10,6 +10,6 @@
     $sql="UPDATE `user` SET `Profile`='".$img."' WHERE `Username`='".$_SESSION['username']."'";
     $conn->exec($sql);
 
-    header("url=profile.php");
+    header("Location: ./profile.php");
     exit();
 ?>
