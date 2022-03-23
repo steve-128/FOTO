@@ -11,7 +11,7 @@
     $conn->exec($sql);
 
 
-    echo "go reload";
+    echo "reload";
     header("Location: ./profile.php");
     exit();
 ?>

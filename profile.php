@@ -13,13 +13,10 @@
     $result = $conn->query($sql);
 
     $row = $result -> fetchAll();
-    $_SESSION['profilepic'] = $row[0]['Profile'];
-
-    if(isset($_SESSION['profilepic']))
-    {
-        echo "Profile: <img src='".$_SESSION['profilepic']."'>";
-        echo "<br>";
-    }
+    
+    echo "Profile: <img src='".$row[0]['Profile']."'>";
+    echo "<br>";
+    
     echo "<a href='./uploadprofile.php'>Upload profile pic</a>";
     echo "<br>";
     echo "username: ".$_SESSION['username'];

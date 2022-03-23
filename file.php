@@ -7,8 +7,6 @@
     
     echo "Your post:<br>";
     require('movefile.php');
-    echo "<img src='./img/".$_FILES['upload']['name']."'>";
-    echo "<br>";
     echo $_POST['description'];
 
     $sql="INSERT INTO post (Foto, Description, User) Values ('".$img."','".$_POST['description']."','".$_SESSION['username']."')";
