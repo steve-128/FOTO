@@ -4,7 +4,7 @@
 ?>
 <?php
     session_start();
-    require('movefolder.php');
+    require('movefile.php');
     $_SESSION['profilepic'] = $img;
 
     $sql="UPDATE `user` SET `Profile`='".$img."' WHERE `Username`='".$_SESSION['username']."'";
