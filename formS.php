@@ -1,9 +1,10 @@
 <!-- sign up form handler -->
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "lhmethod";
+$hostname = "us-cdbr-east-05.cleardb.net";
+$username = "b5360e8317bffd";
+$password = "bff46df7";
+$database = "heroku_9e9ee605a716345";
 
 $user = $_POST['user'];
 $email = $_POST['email'];
@@ -18,7 +19,7 @@ $pass = addslashes($pass);
 $pass = password_hash($pass,PASSWORD_BCRYPT);
 try {
   //connect to database
-  $conn = new PDO("mysql:host=$servername;dbname=user", $username, $password);
+  $conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   //Write database
@@ -36,6 +37,7 @@ try {
       }
   }
   
+  
   $sql="INSERT INTO user (Fname, Lname, Username, Password, Email) Values ('".$first."','".$last."','".$user."','".$pass."','".$email."')";
   $conn->exec($sql);
   //sql code
@@ -43,6 +45,7 @@ try {
 } catch(PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
 };
+
 
 session_start();
 
