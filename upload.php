@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <?php
+        require("nav.php");
         require("db.php");
     ?>
     <meta charset="UTF-8">
