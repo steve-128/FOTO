@@ -19,7 +19,8 @@
     <?php
         if(isset($_POST['avatar_url']))
         {
-            echo $_POST['avatar_url'];
+            echo "<br>";
+            echo "<img src='".$_POST['avatar_url']."'>";
         }
     ?>
 </body>
