@@ -20,6 +20,7 @@
         <input type="submit" name="submit" id="submit">
     </form>
     <?php
+        var_dump($_SESSION);
         if(isset($_POST['avatar_url']))
         {
             echo "<br>";
