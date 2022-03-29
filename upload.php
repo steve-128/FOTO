@@ -20,7 +20,6 @@
         <input type="submit" name="submit" id="submit">
     </form>
     <?php
-        var_dump($_SESSION);
         if(isset($_POST['avatar_url']))
         {
             echo "<br>";
@@ -29,6 +28,7 @@
             echo "<img src='".$_POST['avatar_url']."'>";
         }
     session_start();
+    var_dump($_SESSION);
 
     echo $_SESSION['username']. " ahhhhhhhhhhhhhhhhhh ";
 
