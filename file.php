@@ -27,7 +27,6 @@
 
 
     echo "Your post:<br>";
-    require('movefile.php');
     echo $_POST['description'];
 
     $sql="INSERT INTO post (Foto, Description, User) Values ('".$img."','".$_POST['description']."','".$_SESSION['username']."')";
