@@ -2,32 +2,36 @@
 <html lang="en">
 <head>
     <?php
+        require("nav.php");
         require("db.php");
     ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://app.simplefileupload.com/buckets/807627ca14520b5bbb91e89b80283b37.js"></script>
-    <title>Document</title>
+    <title>Upload file</title>
 </head>
 <body>
     <form action = "" method = "post" enctype = "multipart/form-data">
-        <input type="hidden" name="avatar_url" id="avatar_url" class="simple-file-upload">
+        <input type="hidden" name="avatar_url" id="avatar_url" class="simple-file-upload" require>
+        <br>
+        <input type="text" name="description">
+        <br>
         <input type="submit" name="submit" id="submit">
     </form>
+    <?php
+        if(isset($_POST['avatar_url']))
+        {
+            echo "<br>";
+            echo "Your post:<br>";
+            echo "<br>";
+            echo "<img src='".$_POST['avatar_url']."'>";
+        }
+    session_start();
+
+    $sql="UPDATE `user` SET `Profile`='".$_POST['avatar_url']."' WHERE `Username`='".$_SESSION['username']."'";
+    $conn->exec($sql);
+
+    ?>
 </body>
 </html>
-<html>
-
-
-<!-- upload profile pic form  -->
-<!-- <?php
-    require('nav.php');
-?>
-Upload Profile
-<form action='profilepic.php' method="POST" enctype='multipart/form-data'>   
-    <label for='upload'>Picture :<br></label>
-    <input type='file' name='upload' id='upload' required>
-    <br>
-    <input type="submit">
-</form> -->
