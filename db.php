@@ -16,3 +16,4 @@ try {
   echo "Connection failed: " . $e->getMessage();
 };
 ?>
+<script src="https://app.simplefileupload.com/buckets/807627ca14520b5bbb91e89b80283b37.js"></script>
