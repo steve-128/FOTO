@@ -16,6 +16,12 @@
         <input type="hidden" name="avatar_url" id="avatar_url" class="simple-file-upload">
         <input type="submit" name="submit" id="submit">
     </form>
+    <?php
+        if(isset($_POST['avatar_url']))
+        {
+            echo $_POST['avatar_url'];
+        }
+    ?>
 </body>
 </html>
 <html>
