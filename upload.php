@@ -27,18 +27,15 @@
             echo "Your post:<br>";
             echo "<br>";
             echo "<img src='".$_POST['avatar_url']."'>";
+
+            $user = $_SESSION['username'];
+            $description = $_POST['description'];
+            $avatar_url = $_POST['avatar_url'];
+
+            $sql="INSERT INTO post (Foto, Description, User) Values ('".$avatar_url."','".$description."','".$user."')";
+            $conn->exec($sql);
         }
-    var_dump($_SESSION);
-
-    $user = $_SESSION['username'];
-    $description = $_POST['description'];
-    $avatar_url = $_POST['avatar_url'];
-
-    echo $_SESSION['username']. " ahhhhhhhhhhhhhhhhhh ";
-
-    $sql="INSERT INTO post (Foto, Description, User) Values ('".$avatar_url."','".$description."','".$user."')";
-    var_dump($sql);
-    $conn->exec($sql);
+    
 ?>
     
 </body>
