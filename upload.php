@@ -20,6 +20,7 @@
         <input type="submit" name="submit" id="submit">
     </form>
     <?php
+        session_start();
         if(isset($_POST['avatar_url']))
         {
             echo "<br>";
@@ -27,12 +28,16 @@
             echo "<br>";
             echo "<img src='".$_POST['avatar_url']."'>";
         }
-    session_start();
     var_dump($_SESSION);
+
+    $user = $_SESSION['username'];
+    $description = $_POST['description'];
+    $avatar_url = $_POST['avatar_url'];
 
     echo $_SESSION['username']. " ahhhhhhhhhhhhhhhhhh ";
 
-    $sql="INSERT INTO post (Foto, Description, User) Values ('".$_POST['avatar_url']."','".$_POST['description']."','".$_SESSION['username']."')";
+    $sql="INSERT INTO post (Foto, Description, User) Values ('".$avatar_url."','".$description."','".$user."')";
+    var_dump($sql);
     $conn->exec($sql);
 ?>
     
