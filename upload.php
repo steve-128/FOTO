@@ -13,8 +13,8 @@
 </head>
 <body>
     <form action = "" method = "post" enctype = "multipart/form-data">
-        <input type="hidden" name="avatar_url" id="avatar_url" class="simple-file-upload">
         <input type="text" name="description">
+        <input type="hidden" name="avatar_url" id="avatar_url" class="simple-file-upload">
         <input type="submit" name="submit" id="submit">
     </form>
     <?php
@@ -27,12 +27,14 @@
         }
     session_start();
 
+    echo $_SESSION['username']. " ahhhhhhhhhhhhhhhhhh ";
+
     $sql="INSERT INTO post (Foto, Description, User) Values ('".$_POST['avatar_url']."','".$_POST['description']."','".$_SESSION['username']."')";
     $conn->exec($sql);
 
-    header("refresh: 1;url=mypage.php");
+    // header("refresh: 1;url=mypage.php");
 ?>
-    ?>
+    
 </body>
 </html>
 <html>

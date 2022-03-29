@@ -19,7 +19,6 @@
     {
         require('printpost.php');        
         require('likebottom.php');
-
     }
 ?>
 
