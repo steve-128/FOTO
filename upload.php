@@ -33,8 +33,6 @@
 
     $sql="INSERT INTO post (Foto, Description, User) Values ('".$_POST['avatar_url']."','".$_POST['description']."','".$_SESSION['username']."')";
     $conn->exec($sql);
-
-    // header("refresh: 1;url=mypage.php");
 ?>
     
 </body>
