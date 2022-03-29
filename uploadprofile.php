@@ -15,22 +15,24 @@
     <form action = "" method = "post" enctype = "multipart/form-data">
         <input type="hidden" name="avatar_url" id="avatar_url" class="simple-file-upload" require>
         <br>
-        <input type="text" name="description">
-        <br>
         <input type="submit" name="submit" id="submit">
     </form>
     <?php
+        session_start();
         if(isset($_POST['avatar_url']))
         {
             echo "<br>";
             echo "Your post:<br>";
             echo "<br>";
             echo "<img src='".$_POST['avatar_url']."'>";
-        }
-    session_start();
 
-    $sql="UPDATE `user` SET `Profile`='".$_POST['avatar_url']."' WHERE `Username`='".$_SESSION['username']."'";
-    $conn->exec($sql);
+            $user = $_SESSION['username'];
+            $avatar_url = $_POST['avatar_url'];
+
+            $sql="UPDATE `user` SET `Profile`='".$avatar_url."' WHERE `Username`='".$user."'";
+            $conn->exec($sql);
+        }
+    
 
     ?>
 </body>
