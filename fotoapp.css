@@ -3,7 +3,7 @@
     font-family: Arial, sans-serif;
     text-align: center;
     border-radius: 5px;
-    color: white;
+    color: black;
 }
 header {
     border-radius: 0px;
@@ -48,19 +48,4 @@ input {
     background-color: aqua;
     font-weight: bold;
     text-align: center;
-}
-section.a{
-    margin:30px 20%;
-}
-section.a h1,h3,h6{
-    padding-left: 20px;
-    padding-top: 20px;
-    text-align: left;
-}
-section.a h1{
-    padding-bottom:0%;
-}
-section.a h3,h6{
-    padding-top: 20px;
-    opacity: 80%;
 }
