@@ -32,8 +32,6 @@
             $sql="UPDATE `user` SET `Profile`='".$avatar_url."' WHERE `Username`='".$user."'";
             $conn->exec($sql);
         }
-    
-
     ?>
 </body>
 </html>

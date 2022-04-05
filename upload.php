@@ -35,8 +35,6 @@
             $sql="INSERT INTO post (Foto, Description, User) Values ('".$avatar_url."','".$description."','".$user."')";
             $conn->exec($sql);
         }
-    
-?>
-    
+    ?>
 </body>
 </html>
