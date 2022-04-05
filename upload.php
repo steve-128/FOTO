@@ -16,7 +16,7 @@
     <form action = "" method = "post" enctype = "multipart/form-data">
         <input type="hidden" name="avatar_url" id="avatar_url" class="simple-file-upload" require>
         <br>
-        <input type="text" name="description">
+        <input type="text" name="description" placeholder="Description">
         <br>
         <input type="submit" name="submit" id="submit">
     </form>
