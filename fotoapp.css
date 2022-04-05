@@ -39,12 +39,11 @@ input {
     text-align: left;
     border-style: solid;
 }
-
 img {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
-    width: 150px;
+    width: 500px;
     height: auto;
 }
 #submit{
