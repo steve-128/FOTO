@@ -16,7 +16,6 @@
         session_start();
         $pid = $_GET['postid'];
 
-
         $sql = "SELECT * FROM `post_like` inner join `post` on `Like_post` = `PostID` WHERE PostID = '".$pid."'";
         $result = $conn->query($sql);
         
