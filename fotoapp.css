@@ -8,16 +8,16 @@
 nav {
     color: white;
 }
-header {
-    border-radius: 0px;
-    background-color: #206e81;
-    padding: 20px;
-}
-header a{
+a {
     font-size: 25px;
     padding: 0px 30px;
     font-weight: bold;
     text-decoration: none;
+}
+header {
+    border-radius: 0px;
+    background-color: #206e81;
+    padding: 20px;
 }
 section {
     margin: 70px 36%;
