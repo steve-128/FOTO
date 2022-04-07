@@ -28,6 +28,11 @@ input {
     text-align: left;
     border-style: solid;
 }
+input.like {
+    width:20%;
+    /* jhjkjhgfghjhgfghjhghjhghjhghjhg */
+
+}
 img {
     border: 1px solid #ddd;
     border-radius: 4px;

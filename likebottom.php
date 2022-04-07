@@ -15,9 +15,9 @@
                     <input type='hidden' name='like'";
     if($LK)
         echo "value='1'>
-                <input type='submit' value='💗'>
+                <input type='submit' class='like' value='💗'>
               </form>";
     else echo " value='0'>
-                  <input type='submit' value='💔'>
+                  <input type='submit' class='like' value='💔'>
                 </form>";
 ?>
