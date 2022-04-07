@@ -24,15 +24,13 @@ input {
     margin:10px 0px;
     padding:10px 20px;
     width:70%;
-    background-color: #4EFBFC;
+    background-color: whitesmoke;
     text-align: left;
     border-style: solid;
 }
 input.like {
     width:17.5% !important;
     text-align: center;
-    /* jhjkjhgfghjhgfghjhghjhghjhghjhg */
-
 }
 img {
     border: 1px solid #ddd;
